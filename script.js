@@ -42,3 +42,15 @@ function deleteGrid() {
         element.remove();
     };
 }
+gridSizeBtn.addEventListener('click', function () {
+    const btnPrompt = prompt("Enter a number for the grid size.");
+    const newGridSize = parseInt(btnPrompt);
+    deleteGrid();
+    if (isNaN(newGridSize)) {
+        alert("Please enter a number!");
+    } else if (newGridSize > 100) {
+        alert("Please enter a smaller number!");
+    } else {
+        createGrid(newGridSize);
+    }
+});
