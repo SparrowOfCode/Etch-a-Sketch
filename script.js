@@ -22,3 +22,9 @@ for (i = 0; i < elements.length; i++) {
         this.style.color = "black";
     })
 }
+
+const gridSizeBtn = document.createElement('button');
+gridSizeBtn.className = "gridButton";
+gridSizeBtn.innerText = "Set Grid Size"
+
+mainDiv.prepend(gridSizeBtn);
