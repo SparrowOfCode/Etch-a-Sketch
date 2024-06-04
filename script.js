@@ -9,22 +9,26 @@ function createGrid(gridSize) {
             const row = document.createElement('div');
             row.className = "sketchPadRow";
             row.innerText = (i * gridSize) + j;
-            // row.style.color = "white";
+            row.style.color = "white";
             column.appendChild(row);
         }
         mainDiv.appendChild(column);
     }
+    hoverEvt();
 }
 createGrid(gridNum);
 
-const elements = document.querySelectorAll('.sketchPadRow');
+function hoverEvt() {
+    const elements = document.querySelectorAll('.sketchPadRow');
 
-for (i = 0; i < elements.length; i++) {
-    elements[i].addEventListener('mouseover', function () {
-        this.style.backgroundColor = "black";
-        this.style.color = "black";
-    })
+    for (i = 0; i < elements.length; i++) {
+        elements[i].addEventListener('mouseover', function () {
+            this.style.backgroundColor = "black";
+            this.style.color = "black";
+        })
+    }
 }
+
 
 const gridSizeBtn = document.createElement('button');
 gridSizeBtn.className = "gridButton";
