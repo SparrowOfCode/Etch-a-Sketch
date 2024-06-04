@@ -1,6 +1,8 @@
 .container {
     display: flex;
     height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
 .innerContainer {
@@ -14,4 +16,9 @@
 
 .sketchPadRow {
     flex: 1;
+}
+
+.gridButton {
+    margin-bottom: auto;
+    padding: 10px;
 }
