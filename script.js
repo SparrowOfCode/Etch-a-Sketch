@@ -25,6 +25,9 @@ function hoverEvt() {
         elements[i].addEventListener('mouseover', function () {
             this.style.backgroundColor = colorChange();
             this.style.color = this.style.backgroundColor;
+            if (this.style.opacity <= 0.9) {
+                this.style.opacity = +this.style.opacity + 0.1;
+            }
         })
     }
 }
