@@ -23,12 +23,18 @@ function hoverEvt() {
 
     for (i = 0; i < elements.length; i++) {
         elements[i].addEventListener('mouseover', function () {
-            this.style.backgroundColor = "black";
-            this.style.color = "black";
+            this.style.backgroundColor = colorChange();
+            this.style.color = this.style.backgroundColor;
         })
     }
 }
 
+function colorChange() {
+    const r = Math.floor(Math.random() * 255);
+    const g = Math.floor(Math.random() * 255);
+    const b = Math.floor(Math.random() * 255);
+    return `rgb(${r}, ${g}, ${b})`
+}
 
 const gridSizeBtn = document.createElement('button');
 gridSizeBtn.className = "gridButton";
@@ -49,12 +55,12 @@ function deleteGrid() {
 gridSizeBtn.addEventListener('click', function () {
     const btnPrompt = prompt("Enter a number for the grid size.");
     const newGridSize = parseInt(btnPrompt);
-    deleteGrid();
     if (isNaN(newGridSize)) {
         alert("Please enter a number!");
     } else if (newGridSize > 100) {
-        alert("Please enter a smaller number!");
+        alert("Please enter a smaller number! Numbers over 100 cause lag.");
     } else {
+        deleteGrid();
         createGrid(newGridSize);
     }
 });
