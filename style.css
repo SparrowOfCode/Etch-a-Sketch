@@ -5,13 +5,26 @@
     padding: 0;
 }
 
+.outerContainer {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    height: 480px;
+    width: 480px;
+    border: 3px solid black;
+    margin: 100px;
+}
+
 .innerContainer {
     display: flex;
-    flex: auto;
+    flex: 1;
+    height: 480px;
+    width: 480px;
 }
 
 .sketchPadColumn {
-    flex: 1;
+    flex: auto;
 }
 
 .sketchPadRow {
