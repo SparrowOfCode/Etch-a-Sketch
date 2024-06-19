@@ -8,9 +8,11 @@ function createGrid(gridSize) {
         for (let j = 0; j < gridSize; j++) {
             const row = document.createElement('div');
             row.className = "sketchPadRow";
-            row.innerText = (i * gridSize) + j;
             row.style.color = "white";
             column.appendChild(row);
+            row.style.width = '100%';
+            let height = 480 / parseInt(gridSize);
+            row.style.height = `${height}px`;
         }
         mainDiv.appendChild(column);
     }
@@ -42,8 +44,9 @@ function colorChange() {
 const gridSizeBtn = document.createElement('button');
 gridSizeBtn.className = "gridButton";
 gridSizeBtn.innerText = "Set Grid Size"
+const container = document.querySelector('.container');
 
-mainDiv.prepend(gridSizeBtn);
+container.appendChild(gridSizeBtn);
 
 function deleteGrid() {
     const elementRow = document.querySelectorAll('.sketchPadRow')
